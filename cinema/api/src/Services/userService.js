@@ -1,6 +1,5 @@
 import database from '../Repository/connection.js'; 
 
-
 async function createUser(name, email, password, typeUser){
   const sql = 'insert into usuario(nome, email, senha, tipo_usuario) values(?, ?, ?, ?)';
   const dados = [name, email, password, typeUser];
@@ -19,4 +18,5 @@ async function updateUser(name, email, password, typeUser, idUser){
   conn.query(sql,dados);
   conn.end();
  }
+
 export default {updateUser, createUser};
